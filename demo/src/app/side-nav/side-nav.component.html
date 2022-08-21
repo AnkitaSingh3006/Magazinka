@@ -1,0 +1,91 @@
+<div class="sideNav">
+    <div class="first-child">
+        <button mat-button (click)="onTriggerSheetClick()">
+            <div>
+                <mat-icon>filter_list </mat-icon>
+            </div>
+            <div>&nbsp;Categories</div>
+        </button>
+    </div>
+    <div class="second-Child">c djvn</div>
+    <div class="collapse">
+        <div class="third-Child">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Collapsed filters
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <section class="example-section" [formGroup]="toppings">
+                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>  
+                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter5">filter 5</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter6">filter 6</mat-checkbox></p>
+                      </section>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="fourth-Child">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Network
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <section class="example-section" [formGroup]="toppings">
+                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>  
+                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter5">filter 5</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter6">filter 6</mat-checkbox></p>
+                      </section>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="fifth-Child">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Storage Capacity
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <section class="example-section" [formGroup]="toppings">
+                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>  
+                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter5">filter 5</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter6">filter 6</mat-checkbox></p>
+                      </section>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    
+        <div class="sixth-Child">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Collapsed filters
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <section class="example-section" [formGroup]="toppings">
+                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>  
+                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter5">filter 5</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter6">filter 6</mat-checkbox></p>
+                      </section>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+   
+</div>
