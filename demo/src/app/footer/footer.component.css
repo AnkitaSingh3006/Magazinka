@@ -1,20 +1,26 @@
-.footer{
-    height: auto;
+.footer {
+    height: 100%;
     width: 100%;
     border-top: 1px solid rgb(240, 240, 240);
 }
-.image{
+
+.image {
     float: left;
     width: 80px;
-    height: auto;
-    padding-left: 10px;
+    height: 100%;
+    padding: 8px 0 0 20px;
 }
-.secondChild{
+
+.secondChild {
+    width: calc(100% - 280px);
+    height: 100%;
+    float: left;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.link{
+
+.link {
     width: 780px;
     height: auto;
     float: left;
@@ -22,26 +28,49 @@
     align-items: center;
     justify-content: center;
     padding: 5px;
-  
-    
 }
-.link button{
+
+.link button {
     width: 151px;
     height: 38px;
 }
-.link div{
+
+.link div {
     height: 100%;
     width: auto;
 }
-.link img{
+
+.link img {
     width: 20px;
     height: 20px;
     margin-top: 7px;
 }
-.link a{
-    color:  rgb(34, 100, 209);
+
+.link a {
+    color: rgb(34, 100, 209);
     text-decoration: none;
 }
 
+.thirdChild {
+    width: 200px;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.thirdChild button {
+    background: #2979ff;
+    opacity: 0.9;
+}
 
+.thirdChild button:hover {
+    background: #2264d1;
+    box-shadow: 0 2px 5px 2px rgb(34, 100, 209, 0.2);
+}
+
+.thirdChild a {
+    text-decoration: none;
+    color: white;
+}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,8 +21,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NewInComponent } from './new-in/new-in.component';
 import { ClothingComponent } from './clothing/clothing.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes:Routes=[
+  {path:'clothing', component:ClothingComponent},
+]
 
 
 @NgModule({
@@ -32,7 +36,6 @@ import { ClothingComponent } from './clothing/clothing.component';
     SideNavComponent,
     BottomSheetComponent,
     FooterComponent,
-    NewInComponent,
     ClothingComponent
   ],
   entryComponents: [
@@ -55,7 +58,8 @@ import { ClothingComponent } from './clothing/clothing.component';
     MatExpansionModule,
     MatCheckboxModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
