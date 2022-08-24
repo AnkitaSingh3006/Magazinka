@@ -1,9 +1,279 @@
-.container{
+.container {
     width: 100%;
     height: auto;
 }
-.container mat-card{
-    width: 100%;
+
+.container mat-card {
+    width: 95%;
     height: auto;
-    margin: 20px 0 0 0;
+    margin: 25px 0 0 5px;
+}
+
+.dropdown {
+    width: 100%;
+    height: 60px;
+}
+
+.dropdown form {
+    width: 220px;
+    height: 40px;
+    float: left;
+    margin-left: 10px;
+}
+
+.dropdown .child-dropdown fieldset {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.dropdown .child-dropdown legend {
+    font-size: 12px;
+    margin-left: 10px;
+    color: rgb(139, 138, 138);
+    font-weight: bold;
+}
+
+.dropdown .child-dropdown select {
+    padding-left: 8px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-size: 14px;
+}
+
+.button-toggle {
+    width: 100%;
+    height: 40px;
+}
+
+.button-toggle mat-button-toggle-group {
+    float: left;
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.multiple-button-toggle {
+    width: 100%;
+    height: 40px;
+    margin: 25px 0 0 10px;
+}
+
+.multiple-button-toggle h5 {
+    width: 55px;
+    height: 100%;
+    float: left;
+    padding: 10px 0 0 0;
+}
+
+.multiple-button-toggle mat-button-toggle-group {
+    width: auto;
+    height: 100%;
+    float: left;
+    border: none;
+    padding-left: 2px;
+
+}
+
+.multiple-button-toggle mat-button-toggle {
+    height: 90%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 0;
+    background-color: #f0f0f1;
+    color: #4a4b57;
+    font-size: 14px;
+    border: none;
+}
+
+.multiple-button-toggle mat-button-toggle:hover {
+    box-shadow: 0 1px 2px 1px hsl(0, 0%, 50%, 0.3);
+}
+
+.cards {
+    width: 100%;
+    height: 520px;
+}
+
+.cards .example-card {
+    float: left;
+    width: calc(98% / 4);
+    height: 95%;
+    box-shadow: none;
+    text-align: left;
+    line-height: 20px;
+    margin-left: 5px;
+
+}
+
+.cards mat-card:hover {
+    box-shadow: 1px 2px 2px 2px rgb(185, 185, 185, 0.4);
+}
+
+.cards .example-card img {
+    width: 250px;
+    height: 250px;
+}
+
+.cards .example-card p {
+    font-size: 14px;
+}
+
+.cards .example-card .status {
+    font-size: 12px;
+    line-height: 16px;
+    color: #89898f;
+}
+
+.cards .example-card mat-card-actions .child-class {
+    width: calc(100%/2);
+    height: 35px;
+    float: left;
+}
+
+.cards .example-card mat-card-actions button {
+    width: 100px;
+    height: 30px;
+    float: right;
+    border-radius: 6px;
+    background: transparent;
+    color: rgb(34, 100, 209);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    border: 1px solid rgb(34, 100, 209);
+}
+
+.cards .example-card mat-card-actions button:hover {
+    background-color: rgb(34, 100, 209, 0.1);
+}
+
+.cards .example-card button mat-icon {
+    font-size: 16px;
+    margin: 6px 0 0 8px;
+}
+
+.cards .example-card mat-card-actions p {
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.rating-mat-icon {
+    width: 90px;
+    color: #ffb41f;
+    float: left;
+    padding-top: 5px;
+}
+
+.rating-mat-icon mat-icon {
+    display: inline;
+    font-size: 16px;
+}
+
+.child-class h5 {
+    width: calc(100% - 90px);
+    float: left;
+    padding-top: 5px;
+}
+
+.last-container {
+    width: 98%;
+    height: 200px;
+    margin-top: 50px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.last-container div {
+    width: calc(100% / 3 - 10px);
+    float: left;
+    height: 100%;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 30px;
+    padding: 40px 20px 20px 20px;
+
+}
+
+.left {
+    background-color: #ebf2ff;
+}
+
+.left:hover {
+    border: 1px solid rgb(34, 100, 209);
+}
+
+.left mat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    color: rgb(34, 100, 209);
+}
+
+.left .first-para {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.left .sec-para {
+    font-size: 14px;
+    color: #89898f;
+}
+
+.mid {
+    background-color: #edf6ee;
+    ;
+}
+
+.mid:hover {
+    border: 1px solid #37833b;
+}
+
+.mid mat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    color: #37833b;
+}
+
+.mid .first-para {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.mid .sec-para {
+    font-size: 14px;
+    color: #89898f;
+}
+
+.right {
+    background-color: #fff8ea;
+    ;
+}
+
+.right:hover {
+    border: 1px solid #ffb41f;
+}
+
+.right mat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    color: #ffb41f;
+}
+
+.right .first-para {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.right .sec-para {
+    font-size: 14px;
+    color: #89898f;
 }
