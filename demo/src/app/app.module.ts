@@ -23,9 +23,22 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClothingComponent } from './clothing/clothing.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ShoesComponent } from './shoes/shoes.component';
+import { AccessoriesComponent } from './accessories/accessories.component';
+import { MoreComponent } from './more/more.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { NewComponent } from './new/new.component';
+import { ElectronicsComponent } from './electronics/electronics.component';
 
-const appRoutes:Routes=[
-  {path:'clothing', component:ClothingComponent},
+
+const appRoutes: Routes = [
+  {path:'', redirectTo:'new',pathMatch:'full'},
+  { path: 'clothing', component: ClothingComponent },
+  { path: 'shoes', component: ShoesComponent },
+  { path: 'accessories', component: AccessoriesComponent },
+  { path: 'more', component: MoreComponent },
 ]
 
 
@@ -36,7 +49,12 @@ const appRoutes:Routes=[
     SideNavComponent,
     BottomSheetComponent,
     FooterComponent,
-    ClothingComponent
+    ClothingComponent,
+    ShoesComponent,
+    AccessoriesComponent,
+    MoreComponent,
+    NewComponent,
+    ElectronicsComponent
   ],
   entryComponents: [
     BottomSheetComponent
@@ -57,8 +75,11 @@ const appRoutes:Routes=[
     MatGridListModule,
     MatExpansionModule,
     MatCheckboxModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatButtonToggleModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

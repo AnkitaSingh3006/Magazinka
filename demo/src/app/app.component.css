@@ -1,16 +1,18 @@
-.header{
+.header {
     width: 100%;
     height: 65px;
     position: sticky;
-    top:0;
+    top: 0;
     left: 0;
     z-index: 1;
 }
-.body{
+
+.body {
     width: 100%;
-    height: 1000px;
+    height: 1200px;
 }
-.leftPart{
+
+.leftPart {
     float: left;
     width: 25%;
     height: 630px;
@@ -19,12 +21,14 @@
     z-index: 1;
     overflow: overlay;
 }
-.rightPart{
+
+.rightPart {
     float: right;
     width: calc(100% - 25%);
-    height: auto;
+    height: 1000px;
 }
-.footer{
+
+.footer {
     width: 100%;
     height: 50px;
     position: sticky;

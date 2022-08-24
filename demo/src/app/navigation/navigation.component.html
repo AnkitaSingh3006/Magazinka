@@ -5,13 +5,11 @@
             <div class="title">Magazinka</div>
         </div>
         <div class="second-Child">
-            <mat-tab-group animationDuration="100ms">
-                <mat-tab label="New in">bcbfg</mat-tab>
-                <mat-tab label="Clothing"><div router-link="clothing"></div></mat-tab>
-                <mat-tab label="Shoes"></mat-tab>
-                <mat-tab label="Accessories"></mat-tab>
-                <mat-tab label="More"></mat-tab>
-            </mat-tab-group>
+            <div routerLink="/new" routerLinkActive="active">New in</div>
+            <div routerLink="/clothing" routerLinkActive="active">Clothing</div>
+            <div routerLink="/shoes" routerLinkActive="active">Shoes</div>
+            <div routerLink="/accessories" routerLinkActive="active">Accessories</div>
+            <div routerLink="/more" routerLinkActive="active">More</div>
         </div>
         <div class="third-Child">
             <div class="search">
