@@ -34,11 +34,13 @@ import { ElectronicsComponent } from './electronics/electronics.component';
 
 
 const appRoutes: Routes = [
+  { path:'',redirectTo:'new',pathMatch:'full'},
   { path: 'new', component: NewComponent },
   { path: 'clothing', component: ClothingComponent },
   { path: 'shoes', component: ShoesComponent },
   { path: 'accessories', component: AccessoriesComponent },
   { path: 'more', component: MoreComponent },
+  { path: 'electronics',component:ElectronicsComponent}
 ]
 
 

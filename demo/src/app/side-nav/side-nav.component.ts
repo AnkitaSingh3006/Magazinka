@@ -4,6 +4,7 @@ import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { FormBuilder } from '@angular/forms';
 import {NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
+import { Router } from '@angular/router';
 
 interface FoodNode {
   name: string;
@@ -51,7 +52,7 @@ const TREE_DATA: FoodNode[] = [
 export class SideNavComponent implements OnInit {
 
 
-  constructor(public _matBottomSheet: MatBottomSheet , private _formBuilder:FormBuilder) {
+  constructor(public _matBottomSheet: MatBottomSheet , private _formBuilder:FormBuilder,private  _router:Router) {
 
     this.dataSource.data = TREE_DATA;
 
@@ -87,6 +88,10 @@ export class SideNavComponent implements OnInit {
 
 
   hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
+
+  onBackButtonClick():void{
+    this._router.navigate(['/electronics']);
+  }
 }
 
 
