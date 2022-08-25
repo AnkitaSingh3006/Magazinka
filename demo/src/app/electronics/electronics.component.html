@@ -1,10 +1,10 @@
 <div class="cards">
-    <mat-card class="example-card">
-        <img mat-card-image src="https://ecommerce-angular-demo.setproduct.com/assets/images/img6.jpg">
+    <mat-card class="example-card" *ngFor="let obj of model">
+        <img mat-card-image src="{{obj.src}}">
         <mat-card-content>
-            <div>Envelope, Stripes, Pencil and etc. Purchase this kit today and feel yourself OKAY</div><br>
-            <div> $ 9.50</div><br>
-            <div class="status">Eligible for Shipping To Mars or somewhere else</div>
+            <p>{{obj.desc}}<p>
+            <h1> {{obj.amount}}</h1><br>
+            <p class="status">{{obj.status}}</p>
         </mat-card-content>
         <mat-card-actions>
             <div class="child-class">
@@ -15,7 +15,7 @@
                     <mat-icon>grade</mat-icon>
                     <mat-icon>grade</mat-icon>
                 </div>
-                <h5>4.77</h5>
+                <h5>{{obj.rating}}</h5>
             </div> 
             <div class="child-class">
                 <button>
