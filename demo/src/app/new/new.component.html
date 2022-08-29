@@ -4,26 +4,35 @@
             <form class="child-dropdown">
                 <fieldset>
                     <legend>Sort By</legend>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]=" opt1Selected"
+                        [ngModelOptions]="{standalone: true}">
                         <option *ngFor="let opt of option1" [value]="opt.id">{{opt.name}}</option>
                     </select>
+                    <p>Selected value is {{opt1Selected}}</p>
                 </fieldset>
-            </form>&nbsp;
 
-            <form class="child-dropdown" style="padding-top:8px;">
-                <fieldset>
-                    <select class="form-select" aria-label="Default select example">
-                        <option *ngFor="let opt of option2" [value]="opt.id">{{opt.name}}</option>
-                    </select>
-                </fieldset>
             </form>
 
             <form class="child-dropdown" style="padding-top:8px;">
                 <fieldset>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]=" opt2Selected"
+                        [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let opt of option2" [value]="opt.id">{{opt.name}}</option>
+                    </select>
+                   <p> Selected value is {{opt2Selected}}</p>
+                </fieldset>
+
+            </form>
+
+            <form class="child-dropdown" style="padding-top:8px;">
+                <fieldset>
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]=" opt3Selected"
+                        [ngModelOptions]="{standalone: true}">
                         <option *ngFor="let opt of option3" [value]="opt.id">{{opt.name}}</option>
                     </select>
+                   <p> Selected value is {{opt3Selected}}</p>
                 </fieldset>
+
             </form>
         </div>
         <div class="button-toggle">

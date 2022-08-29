@@ -9,12 +9,15 @@ import { dropdown } from '../dropdown';
 })
 export class NewComponent implements OnInit {
   
-  constructor() { }
+  constructor() {}
 
   model: any;
   option1: dropdown[] = [];
   option2: dropdown[] = [];
   option3: dropdown[] = [];
+  opt1Selected:any;
+  opt2Selected:any;
+  opt3Selected:any;
 
 
   ngOnInit(): void {
@@ -107,27 +110,30 @@ export class NewComponent implements OnInit {
     ]
 
     this.option1=[
-      {id:"1",name:"Useless first"},
-      {id:"2",name:"Necessary second"},
-      {id:"3",name:"Useful third"},
-      {id:"4",name:"Something fourth"},
+      {id:1,name:"Useless first"},
+      {id:2,name:"Necessary second"},
+      {id:3,name:"Useful third"},
+      {id:4,name:"Something fourth"},
     ]
     this.option2=[
-      {id:"1",name:"Condition"},
-      {id:"2",name:"New"},
-      {id:"3",name:"Lazy idle"},
-      {id:"4",name:"Was Used"},
-      {id:"4",name:"Shabby"},
+      {id:1,name:"Condition"},
+      {id:2,name:"New"},
+      {id:3,name:"Lazy idle"},
+      {id:4,name:"Was Used"},
+      {id:5,name:"Shabby"},
     ]
     this.option3=[
-      {id:"1",name:"Delivery options"},
-      {id:"2",name:"Post"},
-      {id:"3",name:"Pickup"},
-      {id:"4",name:"Pigeon"},
-      {id:"4",name:"Space"},
+      {id:1,name:"Delivery options"},
+      {id:2,name:"Post"},
+      {id:3,name:"Pickup"},
+      {id:4,name:"Pigeon"},
+      {id:5,name:"Space"},
     ]
+    this.opt1Selected=4;
+    this.opt2Selected=1;
+    this.opt3Selected=2;
+    
   }
- 
 
 }
 

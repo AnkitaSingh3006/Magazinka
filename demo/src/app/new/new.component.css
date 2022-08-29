@@ -11,7 +11,7 @@
 
 .dropdown {
     width: 100%;
-    height: 60px;
+    height: 90px;
 }
 
 .dropdown form {
@@ -278,4 +278,8 @@
 .right .sec-para {
     font-size: 14px;
     color: #89898f;
+}
+.child-dropdown p{
+    line-height: 50px;
+    color: rgb(34, 100, 209);
 }
