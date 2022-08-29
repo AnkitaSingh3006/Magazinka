@@ -30,7 +30,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { NewComponent } from './new/new.component';
-import { ElectronicsComponent } from './electronics/electronics.component';
+
 
 
 const appRoutes: Routes = [
@@ -40,7 +40,6 @@ const appRoutes: Routes = [
   { path: 'shoes', component: ShoesComponent },
   { path: 'accessories', component: AccessoriesComponent },
   { path: 'more', component: MoreComponent },
-  { path: 'electronics',component:ElectronicsComponent}
 ]
 
 
@@ -56,7 +55,6 @@ const appRoutes: Routes = [
     AccessoriesComponent,
     MoreComponent,
     NewComponent,
-    ElectronicsComponent
   ],
   entryComponents: [
     BottomSheetComponent

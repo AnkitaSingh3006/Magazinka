@@ -88,10 +88,6 @@ export class SideNavComponent implements OnInit {
 
 
   hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
-
-  onBackButtonClick():void{
-    this._router.navigate(['/electronics']);
-  }
 }
 
 

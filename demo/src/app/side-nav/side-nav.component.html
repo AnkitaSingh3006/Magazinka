@@ -12,8 +12,7 @@
             <!-- This is the tree node template for expandable nodes -->
             <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
                 <div class="mat-tree-node">
-                    <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name"
-                        (click)="onBackButtonClick()">
+                    <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
                         <mat-icon class="mat-icon-rtl-mirror">
                             {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
                         </mat-icon>
@@ -39,24 +38,10 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <section class="example-section" [formGroup]="toppings">
-                        <p>
-                            <mat-checkbox formControlName="filter1">filter 1</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter2">filter 2</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter3">filter 3</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter4">filter 4</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter5">filter 5</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter6">filter 6</mat-checkbox>
-                        </p>
+                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox> </p>
+                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox> </p>
+                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
                     </section>
                 </mat-expansion-panel>
             </mat-accordion>
@@ -70,25 +55,11 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <section class="example-section" [formGroup]="toppings">
-                        <p>
-                            <mat-checkbox formControlName="filter1">filter 1</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter2">filter 2</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter3">filter 3</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter4">filter 4</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter5">filter 5</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter6">filter 6</mat-checkbox>
-                        </p>
-                    </section>
+                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox> </p>
+                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox> </p>
+                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
+                    </section> 
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
@@ -101,24 +72,10 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <section class="example-section" [formGroup]="toppings">
-                        <p>
-                            <mat-checkbox formControlName="filter1">filter 1</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter2">filter 2</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter3">filter 3</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter4">filter 4</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter5">filter 5</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter6">filter 6</mat-checkbox>
-                        </p>
+                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox> </p>
+                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox> </p>
+                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
                     </section>
                 </mat-expansion-panel>
             </mat-accordion>
@@ -133,28 +90,13 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <section class="example-section" [formGroup]="toppings">
-                        <p>
-                            <mat-checkbox formControlName="filter1">filter 1</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter2">filter 2</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter3">filter 3</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter4">filter 4</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter5">filter 5</mat-checkbox>
-                        </p>
-                        <p>
-                            <mat-checkbox formControlName="filter6">filter 6</mat-checkbox>
-                        </p>
+                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox> </p>
+                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox> </p>
+                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
                     </section>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
     </div>
-
 </div>
