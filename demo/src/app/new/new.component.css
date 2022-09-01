@@ -3,6 +3,59 @@
     height: auto;
 }
 
+.dailoguebox {
+    width: 380px;
+    height: 100%;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    z-index: 2;
+    font-family: Muli,sans-serif;
+}
+
+.dailoguebox .inner-container{
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    color:#89898f;
+}
+
+.dailoguebox .inner-container .heading{
+    width: 90%;
+    height: 30px;
+    float: left;
+}
+
+.dailoguebox .inner-container .cancel-icon{
+    width: calc(100% - 90%);
+    height: 30px;
+    float: left;
+    text-align: right;
+}
+.dailoguebox .second-container{
+    width: 100%;
+    height: 80%;
+    line-height: 70px;
+    padding-top: 20px;
+}
+.dailoguebox .second-container mat-form-field{
+    width: 100%;
+    height: 65px;
+}
+
+.dailoguebox .toogleButton{
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: rgb(34, 100, 209);
+    color: white;
+    font-size: 15px;
+}
+
 .container .outline-card{
     width: 98%;
     height: auto;
@@ -145,8 +198,6 @@
     border-radius: 6px;
     background: transparent;
     color: rgb(34, 100, 209);
-    display: flex;
-    align-items: center;
     font-size: 12px;
     border: 1px solid rgb(34, 100, 209);
 }
@@ -156,13 +207,22 @@
 }
 
 .cards .example-card button mat-icon {
+    float: left;
+    width: 40%;
     font-size: 16px;
-    margin: 6px 0 0 8px;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cards .example-card mat-card-actions p {
-    padding: 8px 0 0 10px;
+    float: left;
+    width: calc(100% - 40%);
+    height: inherit;
     font-size: 12px;
+    display: flex;
+    align-items: center;
 }
 
 .rating-mat-icon {

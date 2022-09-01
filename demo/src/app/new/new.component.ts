@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { dropdown } from '../dropdown';
+import { ViewEncapsulation} from '@angular/core';
+import {MatCalendarCellClassFunction} from '@angular/material/datepicker';
 
 
 @Component({
@@ -21,91 +23,115 @@ export class NewComponent implements OnInit {
 
 
   ngOnInit(): void {
-   
+
     this.model = [
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img7.jpg",
         "desc": "One string Bonsai description",
         "amount": "$128.99",
         "status": "Worldwide shifting available Buyers protection possible",
-        "rating": "4.99"
+        "rating": "4.99",
+        "filer":1,
+        "checked":true,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img10.jpg",
         "desc": "Plastic useless plugs and tubes for high-fidelity prototyping. Fit & Eat",
         "amount": "$128.48",
         "status": "Worldwide shifting available Buyers protection possible",
-        "rating": "4.99"
+        "rating": "4.99",
+        "filter":1,
+        "checked":true,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img6.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$13.50",
         "status": "Eligible for shipping to mars or somewhere else",
-        "rating": "4.05"
+        "rating": "4.05",
+        "filter":2,
+        "checked":false,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img2.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$1.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
-        "rating": "4.56"
+        "rating": "4.56",
+        "filter":2,
+        "checked":false,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img3.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$11.50",
         "status": "Eligible for shipping to mars or somewhere else",
-        "rating": "4.05"
+        "rating": "4.05",
+        "filter":3,
+        "checked":false,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img4.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$13.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
-        "rating": "4.56"
+        "rating": "4.56",
+        "filter":3,
+        "checked":false,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img11.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$49.50",
         "status": "Eligible for shipping to mars or somewhere else",
-        "rating": "4.05"
+        "rating": "4.05",
+        "filter":4,
+        "checked":false,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img9.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$13.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
-        "rating": "4.56"
+        "rating": "4.56",
+        "filter":4,
+        "checked":false,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img1.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$49.50",
         "status": "Eligible for shipping to mars or somewhere else",
-        "rating": "4.05"
+        "rating": "4.05",
+        "filter":1,
+        "checked":true,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img5.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$12.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
-        "rating": "4.56"
+        "rating": "4.56",
+        "filter":2,
+        "checked":false,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img8.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$9.50",
         "status": "Eligible for shipping to mars or somewhere else",
-        "rating": "4.05"
+        "rating": "4.05",
+        "filter":3,
+        "checked":false,
       },
       {
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img12.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$23.25",
         "status": "1258 bids, 359 watches $5.95 for shipping",
-        "rating": "4.56"
+        "rating": "4.56",
+        "filter":4,
+        "checked":false,
       }
     ]
 
@@ -134,6 +160,17 @@ export class NewComponent implements OnInit {
     this.opt3Selected=2;
     
   }
+ 
+  color="default"
+  updateColor(){
+    this.color="red"
+  }
+  
+  showMe:boolean=false;
+  toogleTag(){
+    this.showMe=!this.showMe
+  }
 
+  
 }
 

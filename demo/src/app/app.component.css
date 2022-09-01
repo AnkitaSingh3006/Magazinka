@@ -9,30 +9,21 @@
 
 .body {
     width: 100%;
-    min-height: 630px;
-    max-height: 100vh;
+    height: calc( 100vh - 115px);
 }
 
 .leftPart {
     float: left;
     width: 25%;
-    height: 630px;
-    position: fixed;
-    top: 10;
-    left: 0;
-    z-index: 1;
-    overflow: overlay;
+    height: 100%;
+    overflow: auto;
 }
 
 .rightPart {
     float: left;
     width: calc(100% - 25%);
-    height: 630px;
-    position: fixed;
-    top: 10;
-    left: 25%;
-    z-index: 1;
-    overflow: overlay;
+    height: 100%;
+    overflow: auto;
 }
 
 .footer {

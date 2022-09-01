@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { FormBuilder } from '@angular/forms';
-import {NestedTreeControl} from '@angular/cdk/tree';
-import {MatTreeNestedDataSource} from '@angular/material/tree';
+import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Router } from '@angular/router';
+import { Input } from '@angular/core';
 
 interface FoodNode {
   name: string;
@@ -18,27 +19,27 @@ const TREE_DATA: FoodNode[] = [
       {
         name: 'Electronics',
         children: [
-          {name: 'Cell Phones & Smartphones'}],
+          { name: 'Cell Phones & Smartphones' }],
       },
       {
         name: 'Business & Industrial',
-        children: [{name: 'Components Sensor'}, {name: 'Component Acceleration Sensor'},{name: 'Component Fiber Optic Sensors'},{name: 'Metalworking Finishing Machines'}],
+        children: [{ name: 'Components Sensor' }, { name: 'Component Acceleration Sensor' }, { name: 'Component Fiber Optic Sensors' }, { name: 'Metalworking Finishing Machines' }],
       },
       {
         name: 'Computers',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
+        children: [{ name: 'Pumpkins' }, { name: 'Carrots' }],
       },
       {
         name: 'Consumer Electronics',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
+        children: [{ name: 'Pumpkins' }, { name: 'Carrots' }],
       },
       {
         name: 'Home & Garden',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
+        children: [{ name: 'Pumpkins' }, { name: 'Carrots' }],
       },
       {
         name: 'Collectibles',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
+        children: [{ name: 'Pumpkins' }, { name: 'Carrots' }],
       },
     ],
   },
@@ -52,11 +53,11 @@ const TREE_DATA: FoodNode[] = [
 export class SideNavComponent implements OnInit {
 
 
-  constructor(public _matBottomSheet: MatBottomSheet , private _formBuilder:FormBuilder,private  _router:Router) {
+  constructor(public _matBottomSheet: MatBottomSheet, private _formBuilder: FormBuilder, private _router: Router) {
 
     this.dataSource.data = TREE_DATA;
 
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -68,10 +69,10 @@ export class SideNavComponent implements OnInit {
   }
 
   /***collapsed button****/
-  
+
   panelOpenState = false;
 
-  
+
   toppings = this._formBuilder.group({
     filter1: false,
     filter2: false,
@@ -80,7 +81,7 @@ export class SideNavComponent implements OnInit {
     filter5: false,
     filter6: false,
   });
-  
+
   /***Nested Tree***/
 
   treeControl = new NestedTreeControl<FoodNode>(node => node.children);
@@ -88,6 +89,11 @@ export class SideNavComponent implements OnInit {
 
 
   hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
+
+  changeValue(){
+    let option = new Option();
+    this.model = option.toString();
+  }
 }
 
 
