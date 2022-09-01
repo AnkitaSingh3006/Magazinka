@@ -37,13 +37,13 @@
                             Collapsed filters
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div *ngFor="let obj of model">
-                        <input type="checkbox" name="{{obj.filter}}" [(ngModel)]="obj.checked"
-                            (change)="changeValue()">
+                    <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
+                        <input type="{{checkboxarrays.type}}"  (change)="changeValue()">&nbsp;&nbsp;{{checkboxarrays.name}}
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
+
         <div class="third-Child">
             <mat-accordion>
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -52,12 +52,9 @@
                             Network
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <section class="example-section" [formGroup]="toppings">
-                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox> </p>
-                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox> </p>
-                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>
-                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
-                    </section> 
+                    <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
+                        <input type="{{checkboxarrays.type}}">&nbsp;&nbsp;{{checkboxarrays.name}}
+                    </div>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
@@ -69,12 +66,9 @@
                             Storage Capacity
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <section class="example-section" [formGroup]="toppings">
-                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox> </p>
-                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox> </p>
-                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>
-                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
-                    </section>
+                    <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
+                        <input type="{{checkboxarrays.type}}">&nbsp;&nbsp;{{checkboxarrays.name}}
+                    </div>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
@@ -87,12 +81,9 @@
                             Collapsed filters
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <section class="example-section" [formGroup]="toppings">
-                        <p><mat-checkbox formControlName="filter1">filter 1</mat-checkbox> </p>
-                        <p><mat-checkbox formControlName="filter2">filter 2</mat-checkbox> </p>
-                        <p><mat-checkbox formControlName="filter3">filter 3</mat-checkbox></p>
-                        <p><mat-checkbox formControlName="filter4">filter 4</mat-checkbox></p>
-                    </section>
+                    <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
+                        <input type="{{checkboxarrays.type}}">&nbsp;&nbsp;{{checkboxarrays.name}}
+                    </div>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>

@@ -103,7 +103,7 @@
             </mat-button-toggle-group>
         </div>
         <div class="cards">
-            <mat-card class="example-card" *ngFor="let obj of model | filter:true:model">
+            <mat-card class="example-card" *ngFor="let obj of model | filter:true:selectedOption">
                 <img mat-card-image src="{{obj.src}}" (click)="toogleTag()">
                 <mat-card-content>
                     <p>{{obj.desc}}

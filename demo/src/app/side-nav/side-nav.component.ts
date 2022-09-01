@@ -5,7 +5,6 @@ import { FormBuilder } from '@angular/forms';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Router } from '@angular/router';
-import { Input } from '@angular/core';
 
 interface FoodNode {
   name: string;
@@ -52,7 +51,6 @@ const TREE_DATA: FoodNode[] = [
 })
 export class SideNavComponent implements OnInit {
 
-
   constructor(public _matBottomSheet: MatBottomSheet, private _formBuilder: FormBuilder, private _router: Router) {
 
     this.dataSource.data = TREE_DATA;
@@ -73,15 +71,6 @@ export class SideNavComponent implements OnInit {
   panelOpenState = false;
 
 
-  toppings = this._formBuilder.group({
-    filter1: false,
-    filter2: false,
-    filter3: false,
-    filter4: false,
-    filter5: false,
-    filter6: false,
-  });
-
   /***Nested Tree***/
 
   treeControl = new NestedTreeControl<FoodNode>(node => node.children);
@@ -90,10 +79,33 @@ export class SideNavComponent implements OnInit {
 
   hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
 
-  changeValue(){
-    let option = new Option();
-    this.model = option.toString();
-  }
-}
+  checkboxArray: any = [
+    {
+      id: 1,
+      type: "checkbox",
+      name: "Filter 1",
+      checked: "false"
+    },
+    {
+      id: 1,
+      type: "checkbox",
+      name: "Filter 2",
+      checked: "false"
+    },
+    {
+      id: 1,
+      type: "checkbox",
+      name: "Filter 3",
+      checked: "false"
+    },
+    {
+      id: 1,
+      type: "checkbox",
+      name: "Filter 4",
+      checked: "false"
+    }
+  ]
 
+  
+}
 

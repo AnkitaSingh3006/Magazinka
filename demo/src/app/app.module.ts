@@ -58,7 +58,7 @@ const appRoutes: Routes = [
     AccessoriesComponent,
     MoreComponent,
     NewComponent,
-    FilterPipe,
+    FilterPipe
   ],
   entryComponents: [
     BottomSheetComponent
