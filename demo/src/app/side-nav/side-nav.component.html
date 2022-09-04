@@ -34,11 +34,11 @@
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            Collapsed filters
+                            Collapsable Filter
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
-                        <input type="{{checkboxarrays.type}}"  (change)="changeValue()">&nbsp;&nbsp;{{checkboxarrays.name}}
+                        <input type="checkbox" [(ngModel)]="checkboxarrays.checked"  (change)="changeValue()">&nbsp;&nbsp;{{checkboxarrays.name}}
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>
@@ -53,21 +53,7 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
-                        <input type="{{checkboxarrays.type}}">&nbsp;&nbsp;{{checkboxarrays.name}}
-                    </div>
-                </mat-expansion-panel>
-            </mat-accordion>
-        </div>
-        <div class="third-Child">
-            <mat-accordion>
-                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            Storage Capacity
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
-                        <input type="{{checkboxarrays.type}}">&nbsp;&nbsp;{{checkboxarrays.name}}
+                        <input type="checkbox" [(ngModel)]="checkboxarrays.checked"  (change)="changeValue()">&nbsp;&nbsp;{{checkboxarrays.name}}
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>
@@ -78,11 +64,26 @@
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            Collapsed filters
+                            Storage Capacity
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
-                        <input type="{{checkboxarrays.type}}">&nbsp;&nbsp;{{checkboxarrays.name}}
+                        <input type="checkbox" [(ngModel)]="checkboxarrays.checked"  (change)="changeValue()">&nbsp;&nbsp;{{checkboxarrays.name}}
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+        <div class="third-Child">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Collapsable Filter
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="checkBox" *ngFor="let checkboxarrays of checkboxArray">
+                        <input type="checkbox" [(ngModel)]="checkboxarrays.checked"  (change)="changeValue()">&nbsp;&nbsp;{{checkboxarrays.name}}
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>

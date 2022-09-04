@@ -45,7 +45,7 @@
                 <fieldset>
                     <legend>Sort By</legend>
                     <select class="form-select" aria-label="Default select example" [(ngModel)]=" opt1Selected"
-                        [ngModelOptions]="{standalone: true}">
+                        [ngModelOptions]="{standalone: true}" (ngModelChange)="onSelect(opt1Selected)">
                         <option *ngFor="let opt of option1" [value]="opt.id">{{opt.name}}</option>
                     </select>
                     <p>Selected value is {{opt1Selected}}</p>
@@ -103,8 +103,9 @@
             </mat-button-toggle-group>
         </div>
         <div class="cards">
-            <mat-card class="example-card" *ngFor="let obj of model | filter:true:selectedOption">
-                <img mat-card-image src="{{obj.src}}" (click)="toogleTag()">
+            <!-- | filter:opt1Selected:'filterOption1' -->
+            <mat-card class="example-card" *ngFor="let obj of model | collapsableFilter: checkboxArray : time" (click)="toogleTag()">
+                <img mat-card-image src="{{obj.src}}">
                 <mat-card-content>
                     <p>{{obj.desc}}
                     <p>
@@ -123,8 +124,8 @@
                         <h5>{{obj.rating}}</h5>
                     </div>
                     <div class="child-class">
-                        <button (click)="updateColor()">
-                            <mat-icon [style.color]="color">favorite_border</mat-icon>
+                        <button>
+                            <mat-icon>favorite_border</mat-icon>
                             <p>WATCH</p>
                         </button>
                     </div>

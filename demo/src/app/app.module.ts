@@ -33,7 +33,7 @@ import { NewComponent } from './new/new.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FilterPipe } from './filter.pipe';
-
+import { CollapsableFilterPipe } from './collapsable-filter.pipe';
 
 
 const appRoutes: Routes = [
@@ -58,7 +58,8 @@ const appRoutes: Routes = [
     AccessoriesComponent,
     MoreComponent,
     NewComponent,
-    FilterPipe
+    FilterPipe,
+    CollapsableFilterPipe,
   ],
   entryComponents: [
     BottomSheetComponent

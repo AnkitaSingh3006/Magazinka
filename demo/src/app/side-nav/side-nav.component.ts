@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Router } from '@angular/router';
+import { FilterationDataService } from '../filteration-data.service';
 
 interface FoodNode {
   name: string;
@@ -51,7 +52,7 @@ const TREE_DATA: FoodNode[] = [
 })
 export class SideNavComponent implements OnInit {
 
-  constructor(public _matBottomSheet: MatBottomSheet, private _formBuilder: FormBuilder, private _router: Router) {
+  constructor(public _matBottomSheet: MatBottomSheet, private _formBuilder: FormBuilder, private _router: Router, private message: FilterationDataService) {
 
     this.dataSource.data = TREE_DATA;
 
@@ -84,28 +85,35 @@ export class SideNavComponent implements OnInit {
       id: 1,
       type: "checkbox",
       name: "Filter 1",
-      checked: "false"
+      checked: false,
     },
     {
-      id: 1,
+      id: 2,
       type: "checkbox",
       name: "Filter 2",
-      checked: "false"
+      checked: false
     },
     {
-      id: 1,
+      id: 3,
       type: "checkbox",
       name: "Filter 3",
-      checked: "false"
+      checked: false,
     },
     {
-      id: 1,
+      id: 4,
       type: "checkbox",
       name: "Filter 4",
-      checked: "false"
+      checked: false,
     }
   ]
 
-  
+  changeValue() {
+
+    // console.log('---',this.checkboxArray);
+
+    this.message.sendMesage(this.checkboxArray);
+  }
+
+
 }
 

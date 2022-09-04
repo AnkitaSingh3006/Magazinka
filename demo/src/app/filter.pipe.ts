@@ -5,13 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(arr:any[], selected:boolean, time:string ): any[] {
+  transform(arr:any[], selectedValue:any, keyname:string): any[] {
+    if(!selectedValue){
+      return arr;
+    }
     const newarr=arr.filter((ele:any)=>{
-      return ele.checked==selected;
+     
+      return ele[keyname]==selectedValue
     })
-
+    
     return newarr;
- }
-
+  }
+  
 
 }

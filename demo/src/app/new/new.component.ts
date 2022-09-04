@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { dropdown } from '../dropdown';
-import { ViewEncapsulation } from '@angular/core';
-import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
+import { FilterationDataService } from '../filteration-data.service';
+
 
 
 @Component({
@@ -11,9 +11,20 @@ import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 })
 export class NewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private message: FilterationDataService) {
+    this.message.name.subscribe(cba => {
+      this.time = new Date();
+
+
+      this.checkboxArray = cba;
+    })
+
+    this.selectedData = this.model
+  }
 
   model: any;
+  time: any;
+  checkboxArray: any;
   option1: dropdown[] = [];
   option2: dropdown[] = [];
   option3: dropdown[] = [];
@@ -21,13 +32,14 @@ export class NewComponent implements OnInit {
   opt2Selected: any;
   opt3Selected: any;
 
-
+  cba: any;
   ngOnInit(): void {
 
     this.model = [
       {
         "id": 1,
-        "name": "Filter 1",
+        "filterOption1": 1,
+        "checkBoxId": 2,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img7.jpg",
         "desc": "One string Bonsai description",
         "amount": "$128.99",
@@ -35,8 +47,9 @@ export class NewComponent implements OnInit {
         "rating": "4.99",
       },
       {
-        "id":2,
-        "name":"Filter 1",
+        "id": 2,
+        "filterOption1": 1,
+        "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img10.jpg",
         "desc": "Plastic useless plugs and tubes for high-fidelity prototyping. Fit & Eat",
         "amount": "$128.48",
@@ -44,8 +57,9 @@ export class NewComponent implements OnInit {
         "rating": "4.99",
       },
       {
-        "id":3,
-        "name":"Filter 2",
+        "id": 3,
+        "filterOption1": 2,
+        "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img6.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$13.50",
@@ -53,8 +67,9 @@ export class NewComponent implements OnInit {
         "rating": "4.05",
       },
       {
-        "id":4,
-        "name":"Filter 2",
+        "id": 4,
+        "filterOption1": 2,
+        "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img2.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$1.95",
@@ -62,8 +77,9 @@ export class NewComponent implements OnInit {
         "rating": "4.56",
       },
       {
-        "id":5,
-        "name":"Filter 3",
+        "id": 5,
+        "filterOption1": 3,
+        "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img3.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$11.50",
@@ -71,8 +87,9 @@ export class NewComponent implements OnInit {
         "rating": "4.05",
       },
       {
-        "id":6,
-        "name":"Filter 3",
+        "id": 6,
+        "filterOption1": 3,
+        "checkBoxId": 3,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img4.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$13.95",
@@ -80,8 +97,9 @@ export class NewComponent implements OnInit {
         "rating": "4.56",
       },
       {
-        "id":7,
-        "name":"Filter 4",
+        "id": 7,
+        "filterOption1": 4,
+        "checkBoxId": 3,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img11.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$49.50",
@@ -89,8 +107,9 @@ export class NewComponent implements OnInit {
         "rating": "4.05",
       },
       {
-        "id":8,
-        "name":"Filter 4",
+        "id": 8,
+        "filterOption1": 4,
+        "checkBoxId": 3,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img9.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$13.95",
@@ -98,8 +117,9 @@ export class NewComponent implements OnInit {
         "rating": "4.56",
       },
       {
-        "id":9,
-        "name":"Filter 1",
+        "id": 9,
+        "filterOption1": 1,
+        "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img1.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$49.50",
@@ -107,8 +127,9 @@ export class NewComponent implements OnInit {
         "rating": "4.05",
       },
       {
-        "id":10,
-        "name":"Filter 2",
+        "id": 10,
+        "filterOption1": 2,
+        "checkBoxId": 1,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img5.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$12.95",
@@ -116,8 +137,9 @@ export class NewComponent implements OnInit {
         "rating": "4.56",
       },
       {
-        "id":11,
-        "name":"Filter 3",
+        "id": 11,
+        "filterOption1": 3,
+        "checkBoxId": 2,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img8.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
         "amount": "$9.50",
@@ -125,8 +147,9 @@ export class NewComponent implements OnInit {
         "rating": "4.05",
       },
       {
-        "id":12,
-        "name":"Filter 4",
+        "id": 12,
+        "filterOption1": 4,
+        "checkBoxId": 1,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img12.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
         "amount": "$23.25",
@@ -161,22 +184,28 @@ export class NewComponent implements OnInit {
 
   }
 
-  color = "default"
-  updateColor() {
-    this.color = "red"
-  }
-
   showMe: boolean = false;
   toogleTag() {
     this.showMe = !this.showMe
   }
 
-  selectedOption: string = "";
+  // selectedOption: Array<any> = [];
+  // selectedOptionFilter: string = "";
 
-  changeValue() {
-    let option = new Option();
-    this.selectedOption = option.toString();
+  // changeValue(){
+
+  //   let option = new Option();
+  //   this.selectedOptionFilter = this.selectedOption.toString();
+  // }
+  table_data: any;
+  selectedData: any;
+
+  onSelect(filterOption1: any) {
+
+    console.log(filterOption1);
+    this.selectedData = this.model.filter(((model: { selectedValue: any; }) => model.selectedValue == filterOption1));
+    console.log(this.selectedData)
+    // this.table_data = this.model;
+    // if (this.selectedData) this.table_data.filter((item: any) => item.filterOption1 === this.selectedData)
   }
-
-
 }
