@@ -30,14 +30,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { NewComponent } from './new/new.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FilterPipe } from './filter.pipe';
 import { CollapsableFilterPipe } from './collapsable-filter.pipe';
 
 
 const appRoutes: Routes = [
-  { path:'',redirectTo:'new',pathMatch:'full'},
+  { path: '', redirectTo: 'new', pathMatch: 'full' },
   { path: 'new', component: NewComponent },
   { path: 'clothing', component: ClothingComponent },
   { path: 'shoes', component: ShoesComponent },

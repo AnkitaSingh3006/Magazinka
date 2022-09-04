@@ -19,7 +19,6 @@ export class NewComponent implements OnInit {
       this.checkboxArray = cba;
     })
 
-    this.selectedData = this.model
   }
 
   model: any;
@@ -39,6 +38,8 @@ export class NewComponent implements OnInit {
       {
         "id": 1,
         "filterOption1": 1,
+        "filterOption2": 3,
+        "filterOption3": 2,
         "checkBoxId": 2,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img7.jpg",
         "desc": "One string Bonsai description",
@@ -49,6 +50,8 @@ export class NewComponent implements OnInit {
       {
         "id": 2,
         "filterOption1": 1,
+        "filterOption2": 3,
+        "filterOption3": 2,
         "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img10.jpg",
         "desc": "Plastic useless plugs and tubes for high-fidelity prototyping. Fit & Eat",
@@ -59,6 +62,8 @@ export class NewComponent implements OnInit {
       {
         "id": 3,
         "filterOption1": 2,
+        "filterOption2": 3,
+        "filterOption3": 4,
         "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img6.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
@@ -69,6 +74,8 @@ export class NewComponent implements OnInit {
       {
         "id": 4,
         "filterOption1": 2,
+        "filterOption2": 5,
+        "filterOption3": 4,
         "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img2.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
@@ -79,6 +86,8 @@ export class NewComponent implements OnInit {
       {
         "id": 5,
         "filterOption1": 3,
+        "filterOption2": 5,
+        "filterOption3": 1,
         "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img3.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
@@ -89,6 +98,8 @@ export class NewComponent implements OnInit {
       {
         "id": 6,
         "filterOption1": 3,
+        "filterOption2": 1,
+        "filterOption3": 5,
         "checkBoxId": 3,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img4.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
@@ -99,6 +110,8 @@ export class NewComponent implements OnInit {
       {
         "id": 7,
         "filterOption1": 4,
+        "filterOption2": 1,
+        "filterOption3": 5,
         "checkBoxId": 3,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img11.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
@@ -109,6 +122,8 @@ export class NewComponent implements OnInit {
       {
         "id": 8,
         "filterOption1": 4,
+        "filterOption2": 2,
+        "filterOption3": 3,
         "checkBoxId": 3,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img9.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
@@ -119,6 +134,8 @@ export class NewComponent implements OnInit {
       {
         "id": 9,
         "filterOption1": 1,
+        "filterOption2": 2,
+        "filterOption3": 3,
         "checkBoxId": 4,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img1.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
@@ -129,6 +146,8 @@ export class NewComponent implements OnInit {
       {
         "id": 10,
         "filterOption1": 2,
+        "filterOption2": 4,
+        "filterOption3": 5,
         "checkBoxId": 1,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img5.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
@@ -139,6 +158,8 @@ export class NewComponent implements OnInit {
       {
         "id": 11,
         "filterOption1": 3,
+        "filterOption2": 4,
+        "filterOption3": 1,
         "checkBoxId": 2,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img8.jpg",
         "desc": "Vintage Typewriter to post awesome stories about UI design and web development",
@@ -149,6 +170,8 @@ export class NewComponent implements OnInit {
       {
         "id": 12,
         "filterOption1": 4,
+        "filterOption2": 3,
+        "filterOption3": 2,
         "checkBoxId": 1,
         "src": "https://ecommerce-angular-demo.setproduct.com/assets/images/img12.jpg",
         "desc": "Lee Pucker design. Leather botinki for handsome designers. Free shipping",
@@ -178,9 +201,9 @@ export class NewComponent implements OnInit {
       { id: 4, name: "Pigeon" },
       { id: 5, name: "Space" },
     ]
-    this.opt1Selected = 4;
-    this.opt2Selected = 1;
-    this.opt3Selected = 2;
+    // this.opt1Selected = 4;
+    // this.opt2Selected = 1;
+    // this.opt3Selected = 2;
 
   }
 
@@ -189,23 +212,13 @@ export class NewComponent implements OnInit {
     this.showMe = !this.showMe
   }
 
-  // selectedOption: Array<any> = [];
-  // selectedOptionFilter: string = "";
+  selectedOption: Array<any> = [];
+  selectedOptionFilter: string = "";
 
-  // changeValue(){
+  changeValue() {
 
-  //   let option = new Option();
-  //   this.selectedOptionFilter = this.selectedOption.toString();
-  // }
-  table_data: any;
-  selectedData: any;
-
-  onSelect(filterOption1: any) {
-
-    console.log(filterOption1);
-    this.selectedData = this.model.filter(((model: { selectedValue: any; }) => model.selectedValue == filterOption1));
-    console.log(this.selectedData)
-    // this.table_data = this.model;
-    // if (this.selectedData) this.table_data.filter((item: any) => item.filterOption1 === this.selectedData)
+    let option = new Option();
+    this.selectedOptionFilter = this.selectedOption.toString();
   }
+
 }

@@ -31,6 +31,7 @@
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
                 </form>
+                <br><br><br><br>
                 <hr>
                 <button class="toogleButton" (click)="toogleTag()">Update Contact</button>
             </div>
@@ -45,7 +46,7 @@
                 <fieldset>
                     <legend>Sort By</legend>
                     <select class="form-select" aria-label="Default select example" [(ngModel)]=" opt1Selected"
-                        [ngModelOptions]="{standalone: true}" (ngModelChange)="onSelect(opt1Selected)">
+                        [ngModelOptions]="{standalone: true}" >
                         <option *ngFor="let opt of option1" [value]="opt.id">{{opt.name}}</option>
                     </select>
                     <p>Selected value is {{opt1Selected}}</p>
@@ -103,8 +104,9 @@
             </mat-button-toggle-group>
         </div>
         <div class="cards">
-            <!-- | filter:opt1Selected:'filterOption1' -->
-            <mat-card class="example-card" *ngFor="let obj of model | collapsableFilter: checkboxArray : time" (click)="toogleTag()">
+            
+            <mat-card class="example-card" *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'  | filter:opt2Selected:'filterOption2'  | filter:opt3Selected:'filterOption3'"
+             (click)="toogleTag()">
                 <img mat-card-image src="{{obj.src}}">
                 <mat-card-content>
                     <p>{{obj.desc}}
