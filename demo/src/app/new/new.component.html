@@ -1,43 +1,26 @@
 <div class="container">
+
     <!--Toggle tag-->
-    <div  *ngIf="showMe" class="dailoguebox">
+    <div *ngIf="showMe" class="dailoguebox">
         <div class="inner-container">
             <p class="heading">Create New Contact</p>
             <mat-icon class="cancel-icon" (click)="toogleTag()">close</mat-icon>
             <hr>
             <div class="second-container">
-                <form class="example-form">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Full Name</mat-label>
-                        <input matInput type="text" placeholder="e.g.Paul Saur">
-                        <mat-icon matSuffix>person</mat-icon>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input matInput type="text" placeholder="e.g. paul453@gmail.com">
-                        <mat-icon matSuffix>email</mat-icon>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Phone</mat-label>
-                        <input matInput type="text" placeholder="e.g +1-080-7555574">
-                        <mat-icon matSuffix>phone</mat-icon>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>DOB</mat-label>
-                        <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY">
-                        <mat-datepicker-toggle matSuffix [for]="picker">
-                            <mat-icon matDatepickerToggleIcon>insert_invitation</mat-icon>
-                        </mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
+                <form  #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+                    <div><input matInput type="text" name="firstname" placeholder="Paul" ngModel> </div>
+                    <div><input matInput type="text" name="lastname" placeholder="Rees" ngModel> </div>
+                    <div><input matInput type="date" name="dob" ngModel></div>
+                    <div><input matInput type="text" name="company" placeholder="Acme Corporation" ngModel> </div>
+                    <div><input matInput type="text" name="job" placeholder="Software Developer" ngModel> </div>
+                    <div><input matInput type="email" name="email" placeholder="paul.rees@domain.com" ngModel> </div>
+                    <div><input matInput type="text" name="number" placeholder="+1-202-555-0112" ngModel> </div>
+                    <div><input matInput type="text" name="notes" placeholder="Do not disturb during work." ngModel> </div>
+                    <hr>
+                    <div><button>Update Contact</button></div>
                 </form>
-                <br><br><br><br>
-                <hr>
-                <button class="toogleButton" (click)="toogleTag()">Update Contact</button>
             </div>
-
         </div>
-
     </div>
 
     <mat-card class="outline-card">
@@ -46,7 +29,7 @@
                 <fieldset>
                     <legend>Sort By</legend>
                     <select class="form-select" aria-label="Default select example" [(ngModel)]=" opt1Selected"
-                        [ngModelOptions]="{standalone: true}" >
+                        [ngModelOptions]="{standalone: true}">
                         <option *ngFor="let opt of option1" [value]="opt.id">{{opt.name}}</option>
                     </select>
                     <p>Selected value is {{opt1Selected}}</p>
@@ -104,11 +87,11 @@
             </mat-button-toggle-group>
         </div>
         <div class="cards">
-            
-            <mat-card class="example-card" *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'  | filter:opt2Selected:'filterOption2'  | filter:opt3Selected:'filterOption3'"
-             (click)="toogleTag()">
-                <img mat-card-image src="{{obj.src}}">
-                <mat-card-content>
+
+            <mat-card class="example-card"
+                *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'  | filter:opt2Selected:'filterOption2'  | filter:opt3Selected:'filterOption3'">
+                <img mat-card-image src="{{obj.src}}" (click)="toogleTag()">
+                <mat-card-content (click)="toogleTag()">
                     <p>{{obj.desc}}
                     <p>
                     <h1> {{obj.amount}}</h1><br>
@@ -116,7 +99,7 @@
                 </mat-card-content>
                 <mat-card-actions>
                     <div class="child-class">
-                        <div class="rating-mat-icon">
+                        <div class="rating-mat-icon" (click)="toogleTag()">
                             <mat-icon>grade</mat-icon>
                             <mat-icon>grade</mat-icon>
                             <mat-icon>grade</mat-icon>
@@ -126,8 +109,15 @@
                         <h5>{{obj.rating}}</h5>
                     </div>
                     <div class="child-class">
-                        <button>
-                            <mat-icon>favorite_border</mat-icon>
+                        <button mat-icon-button (click)="toggleSelected()">
+                            <mat-icon *ngIf="selected" aria-label="Example icon-button with a heart icon">
+                                favorite
+                            </mat-icon>
+
+                            <mat-icon *ngIf="!selected" aria-label="Example icon-button with a heart icon">
+                                favorite_border
+                            </mat-icon>
+
                             <p>WATCH</p>
                         </button>
                     </div>

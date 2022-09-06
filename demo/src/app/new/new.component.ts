@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { dropdown } from '../dropdown';
 import { FilterationDataService } from '../filteration-data.service';
 
@@ -10,6 +11,7 @@ import { FilterationDataService } from '../filteration-data.service';
   styleUrls: ['./new.component.css']
 })
 export class NewComponent implements OnInit {
+
 
   constructor(private message: FilterationDataService) {
     this.message.name.subscribe(cba => {
@@ -46,6 +48,7 @@ export class NewComponent implements OnInit {
         "amount": "$128.99",
         "status": "Worldwide shifting available Buyers protection possible",
         "rating": "4.99",
+        "favourite": false
       },
       {
         "id": 2,
@@ -58,6 +61,7 @@ export class NewComponent implements OnInit {
         "amount": "$128.48",
         "status": "Worldwide shifting available Buyers protection possible",
         "rating": "4.99",
+        "favourite": false
       },
       {
         "id": 3,
@@ -70,6 +74,7 @@ export class NewComponent implements OnInit {
         "amount": "$13.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
+        "favourite": false
       },
       {
         "id": 4,
@@ -82,6 +87,7 @@ export class NewComponent implements OnInit {
         "amount": "$1.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
+        "favourite": false
       },
       {
         "id": 5,
@@ -94,6 +100,7 @@ export class NewComponent implements OnInit {
         "amount": "$11.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
+        "favourite": false
       },
       {
         "id": 6,
@@ -106,6 +113,7 @@ export class NewComponent implements OnInit {
         "amount": "$13.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
+        "favourite": false
       },
       {
         "id": 7,
@@ -118,6 +126,7 @@ export class NewComponent implements OnInit {
         "amount": "$49.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
+        "favourite": false
       },
       {
         "id": 8,
@@ -130,6 +139,7 @@ export class NewComponent implements OnInit {
         "amount": "$13.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
+        "favourite": false
       },
       {
         "id": 9,
@@ -142,6 +152,7 @@ export class NewComponent implements OnInit {
         "amount": "$49.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
+        "favourite": false
       },
       {
         "id": 10,
@@ -154,6 +165,7 @@ export class NewComponent implements OnInit {
         "amount": "$12.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
+        "favourite": false
       },
       {
         "id": 11,
@@ -166,6 +178,7 @@ export class NewComponent implements OnInit {
         "amount": "$9.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
+        "favourite": false
       },
       {
         "id": 12,
@@ -178,6 +191,7 @@ export class NewComponent implements OnInit {
         "amount": "$23.25",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
+        "favourite": false
       }
     ]
 
@@ -207,10 +221,14 @@ export class NewComponent implements OnInit {
 
   }
 
+  /*************toogle*************/
+
   showMe: boolean = false;
   toogleTag() {
     this.showMe = !this.showMe
   }
+
+  /********************filter code*******************/
 
   selectedOption: Array<any> = [];
   selectedOptionFilter: string = "";
@@ -221,4 +239,19 @@ export class NewComponent implements OnInit {
     this.selectedOptionFilter = this.selectedOption.toString();
   }
 
+  /***********favourite to unfavourite button code************/
+
+  selected: any;
+  selectedChange: any;
+
+  toggleSelected() {
+    this.selected = !this.selected;
+  }
+
+
+  /****************form console*****************/
+
+  loginUser(item: any) {
+    console.log(item)
+  }
 }
