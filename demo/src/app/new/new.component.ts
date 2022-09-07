@@ -242,7 +242,6 @@ export class NewComponent implements OnInit {
   /***********favourite to unfavourite button code************/
 
   selected: any;
-  selectedChange: any;
 
   toggleSelected() {
     this.selected = !this.selected;
