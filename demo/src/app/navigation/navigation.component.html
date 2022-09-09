@@ -19,10 +19,10 @@
                 </form>
                 
             </div>
-            <div class="badge">
-                <p>
-                    <mat-icon matBadge="3" matBadgeColor="warn">shopping_cart</mat-icon>
-                </p>
+            <div class="badge" routerLink="cart">
+                <button>
+                    <mat-icon matBadge="{{totalItem}}" matBadgeColor="warn">add_shopping_cart</mat-icon>
+                </button>
             </div>
             <div class="profile">
                 <img src="/assets/ghh1_5e0330bc40062.jpg">

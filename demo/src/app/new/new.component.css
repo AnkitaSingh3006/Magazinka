@@ -5,7 +5,7 @@
 
 .dailoguebox {
     width: 380px;
-    height: 100%;
+    height: 100vh;
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
     position: fixed;
@@ -165,7 +165,7 @@
 
 .cards {
     width: 100%;
-    height: 1470px;
+    height: 1680px;
     margin-top: 20px;
     line-height: 20px;
 }
@@ -173,7 +173,7 @@
 .cards .example-card {
     float: left;
     width: calc(95% / 4);
-    height: 480px;
+    height: 550px;
     box-shadow: none;
     text-align: left;
     margin: 5px 0 0 10px;
@@ -207,7 +207,7 @@
     float: left;
 }
 
-.cards .example-card mat-card-actions button {
+.cards .example-card mat-card-actions .btn {
     width: 100px;
     height: 30px;
     float: right;
@@ -216,9 +216,10 @@
     color: rgb(34, 100, 209);
     font-size: 12px;
     border: 1px solid rgb(34, 100, 209);
+    cursor: pointer;
 }
 
-.cards .example-card mat-card-actions button:hover {
+.cards .example-card mat-card-actions .btn:hover {
     background-color: rgb(34, 100, 209, 0.1);
 }
 
@@ -260,12 +261,31 @@
     padding-top: 5px;
 }
 
+.cards .example-card mat-card-actions .cartButton{
+    width: 100%;
+    height: 35px;
+    float: right;
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    border: 1px solid #2264d1;
+    background-color: rgb(34, 100, 209);
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.cards .example-card mat-card-actions .cartButton:hover {
+    opacity: 0.6;
+}
+
 .last-container {
     width: 98%;
     height: 250px;
     margin-top: 50px;
     font-family:Arial, Helvetica, sans-serif;
 }
+
 
 .last-container div {
     width: calc(100% / 3 - 10px);

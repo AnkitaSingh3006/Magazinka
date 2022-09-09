@@ -27,7 +27,7 @@
         <div class="dropdown">
             <form class="child-dropdown">
                 <fieldset>
-                    <legend>Sort By</legend>
+                    <legend>Filter By</legend>
                     <select class="form-select" aria-label="Default select example" [(ngModel)]=" opt1Selected"
                         [ngModelOptions]="{standalone: true}">
                         <option *ngFor="let opt of option1" [value]="opt.id">{{opt.name}}</option>
@@ -87,15 +87,15 @@
             </mat-button-toggle-group>
         </div>
         <div class="cards">
-
+            <!-- | filter:opt2Selected:'filterOption2'  | filter:opt3Selected:'filterOption3' -->
             <mat-card class="example-card"
-                *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'  | filter:opt2Selected:'filterOption2'  | filter:opt3Selected:'filterOption3'">
+                *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'">
                 <img mat-card-image src="{{obj.src}}" (click)="toogleTag()">
                 <mat-card-content (click)="toogleTag()">
-                    <p>{{obj.desc}}
-                    <p>
+                    <p>{{obj.desc}}<p>
                     <h1> {{obj.amount}}</h1><br>
                     <p class="status">{{obj.status}}</p>
+                    <h4 style="color: #2264d1;">{{obj.kindOf}}</h4>
                 </mat-card-content>
                 <mat-card-actions>
                     <div class="child-class">
@@ -110,7 +110,7 @@
                     </div>
                     <div class="child-class">
                         <!-- (click)="toggleSelected()" -->
-                        <button mat-icon-button>
+                        <button mat-button class="btn">
                             <!-- <mat-icon *ngIf="selected" aria-label="Example icon-button with a heart icon">
                                 favorite
                             </mat-icon> -->
@@ -122,6 +122,7 @@
                             <p>WATCH</p>
                         </button>
                     </div>
+                    <button class="cartButton" (click)="addtoCart(obj)">Add to Cart</button>
                 </mat-card-actions>
             </mat-card>
         </div>

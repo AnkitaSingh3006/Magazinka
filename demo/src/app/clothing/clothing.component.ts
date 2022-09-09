@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { dropdown } from '../dropdown';
 
 @Component({
   selector: 'app-clothing',
@@ -11,9 +10,9 @@ export class ClothingComponent implements OnInit {
   constructor() { }
 
   model: any;
-  option1: dropdown[] = [];
-  option2: dropdown[] = [];
-  option3: dropdown[] = [];
+  option1: any = [];
+  option2: any = [];
+  option3: any = [];
 
 
   ngOnInit(): void {

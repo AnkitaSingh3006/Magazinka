@@ -1,0 +1,48 @@
+<ng-container *ngIf="product.length != 0">
+    <div class="container">
+        <h2>My Cart</h2>
+        <div class="cart-product">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sr.No.</th>
+                        <th>Product Image</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let obj of product; let i=index">
+                        <td>{{i+1}}</td>
+                        <td><img src="{{obj.src}}"></td>
+                        <td>{{obj.desc}}</td>
+                        <td> {{obj.amount}}</td>
+                        <td>1</td>
+                        <td>
+                            <button (click)="removeItem(obj)"><mat-icon>delete_outline</mat-icon></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="moreBtn">
+            <button (click)="emptycart()" style="background-color: rgb(227, 117, 49);">Empty Cart</button>
+            <button routerLink="/" style="background-color: rgb(34, 100, 209);">Shop More</button>
+        </div>   
+    </div>
+</ng-container>
+
+<ng-container *ngIf="product.length == 0">
+    <div class="container">
+    <h2>My Cart</h2>
+    <hr>
+    <div class="body">
+        <img src="/assets/cart.png">
+        <h4>Your cart is empty!</h4>
+        <p>Add item to it now</p><br>
+        <button class="btn" routerLink="/">Shop Now</button>
+    </div>
+    </div>
+</ng-container>

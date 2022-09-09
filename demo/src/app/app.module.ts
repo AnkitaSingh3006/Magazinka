@@ -1,5 +1,6 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,7 +35,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FilterPipe } from './filter.pipe';
 import { CollapsableFilterPipe } from './collapsable-filter.pipe';
-
+import { CartComponent } from './cart/cart.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'new', pathMatch: 'full' },
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
   { path: 'shoes', component: ShoesComponent },
   { path: 'accessories', component: AccessoriesComponent },
   { path: 'more', component: MoreComponent },
+  { path: 'cart', component: CartComponent },
 ]
 
 
@@ -58,6 +60,7 @@ const appRoutes: Routes = [
     AccessoriesComponent,
     MoreComponent,
     NewComponent,
+    CartComponent,
     FilterPipe,
     CollapsableFilterPipe,
   ],
@@ -65,6 +68,7 @@ const appRoutes: Routes = [
     BottomSheetComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
