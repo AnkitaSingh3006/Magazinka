@@ -255,8 +255,12 @@ export class NewComponent implements OnInit {
 
   /*****************Add to cart*****************/
 
-  addtoCart(obj:any){
+  addtoCart(obj: any) {
     this._cartService.addtoCart(obj);
 
   }
+
+  /******************Form*********************/
+
+  hide = true;
 }

@@ -3,21 +3,27 @@
     <!--Toggle tag-->
     <div *ngIf="showMe" class="dailoguebox">
         <div class="inner-container">
-            <p class="heading">Create New Contact</p>
+            <p class="heading">Create Your Account</p>
             <mat-icon class="cancel-icon" (click)="toogleTag()">close</mat-icon>
             <hr>
             <div class="second-container">
-                <form  #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+                <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
                     <div><input matInput type="text" name="firstname" placeholder="Paul" ngModel> </div>
                     <div><input matInput type="text" name="lastname" placeholder="Rees" ngModel> </div>
                     <div><input matInput type="date" name="dob" ngModel></div>
-                    <div><input matInput type="text" name="company" placeholder="Acme Corporation" ngModel> </div>
-                    <div><input matInput type="text" name="job" placeholder="Software Developer" ngModel> </div>
                     <div><input matInput type="email" name="email" placeholder="paul.rees@domain.com" ngModel> </div>
                     <div><input matInput type="text" name="number" placeholder="+1-202-555-0112" ngModel> </div>
-                    <div><input matInput type="text" name="notes" placeholder="Do not disturb during work." ngModel> </div>
+                    <div><input matInput type="text" name="address" ngModel
+                            placeholder=" Robert Robertson, 1234 NW Bobcat Lane"></div>
+                    <div><input matInput type="text" name="password" placeholder="Set password"
+                            [type]="hide ? 'password' : 'text'" ngModel>
+                        <button class="btn" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </div>
                     <hr>
-                    <div><button>Update Contact</button></div>
+                    <div><button class="button">SIGN UP</button></div>
                 </form>
             </div>
         </div>
@@ -92,37 +98,37 @@
                 *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'">
                 <img mat-card-image src="{{obj.src}}" (click)="toogleTag()">
                 <mat-card-content (click)="toogleTag()">
-                    <p>{{obj.desc}}<p>
+                    <p>{{obj.desc}}
                     <h1> {{obj.amount}}</h1><br>
                     <p class="status">{{obj.status}}</p>
                     <h4 style="color: #2264d1;">{{obj.kindOf}}</h4>
                 </mat-card-content>
                 <mat-card-actions>
-                    <div class="child-class">
-                        <div class="rating-mat-icon" (click)="toogleTag()">
-                            <mat-icon>grade</mat-icon>
-                            <mat-icon>grade</mat-icon>
-                            <mat-icon>grade</mat-icon>
-                            <mat-icon>grade</mat-icon>
-                            <mat-icon>star_half</mat-icon>
-                        </div>
-                        <h5>{{obj.rating}}</h5>
+                    <div class="rating-mat-icon" (click)="toogleTag()">
+                        <mat-icon>grade</mat-icon>
+                        <mat-icon>grade</mat-icon>
+                        <mat-icon>grade</mat-icon>
+                        <mat-icon>grade</mat-icon>
+                        <mat-icon>star_half</mat-icon>
                     </div>
-                    <div class="child-class">
-                        <!-- (click)="toggleSelected()" -->
-                        <button mat-button class="btn">
-                            <!-- <mat-icon *ngIf="selected" aria-label="Example icon-button with a heart icon">
+                    <h5>{{obj.rating}}</h5>
+
+                    <button class="cartButton" (click)="addtoCart(obj)">Add to Cart</button>
+
+                    <!-- <div class="child-class">
+                        <button mat-button class="btn" (click)="toggleSelected()">
+                            <mat-icon *ngIf="selected" aria-label="Example icon-button with a heart icon">
                                 favorite
-                            </mat-icon> -->
-                            <!-- *ngIf="!selected"  -->
-                             <mat-icon aria-label="Example icon-button with a heart icon">
+                            </mat-icon>
+
+                            <mat-icon aria-label="Example icon-button with a heart icon" *ngIf="!selected">
                                 favorite_border
                             </mat-icon>
 
                             <p>WATCH</p>
                         </button>
-                    </div>
-                    <button class="cartButton" (click)="addtoCart(obj)">Add to Cart</button>
+                    </div> -->
+
                 </mat-card-actions>
             </mat-card>
         </div>
