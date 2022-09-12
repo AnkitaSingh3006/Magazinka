@@ -3,27 +3,28 @@
     <!--Toggle tag-->
     <div *ngIf="showMe" class="dailoguebox">
         <div class="inner-container">
-            <p class="heading">Create Your Account</p>
+            <p class="heading">Update Description</p>
             <mat-icon class="cancel-icon" (click)="toogleTag()">close</mat-icon>
             <hr>
             <div class="second-container">
-                <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
-                    <div><input matInput type="text" name="firstname" placeholder="Paul" ngModel> </div>
-                    <div><input matInput type="text" name="lastname" placeholder="Rees" ngModel> </div>
-                    <div><input matInput type="date" name="dob" ngModel></div>
-                    <div><input matInput type="email" name="email" placeholder="paul.rees@domain.com" ngModel> </div>
-                    <div><input matInput type="text" name="number" placeholder="+1-202-555-0112" ngModel> </div>
-                    <div><input matInput type="text" name="address" ngModel
-                            placeholder=" Robert Robertson, 1234 NW Bobcat Lane"></div>
-                    <div><input matInput type="text" name="password" placeholder="Set password"
-                            [type]="hide ? 'password' : 'text'" ngModel>
-                        <button class="btn" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                            [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
-                    </div>
-                    <hr>
-                    <div><button class="button">SIGN UP</button></div>
+                <form class="example-form" name="Update" [formGroup]=" editDescription" (click)="edit(editDescription)">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <input matInput placeholder="Ex. sush.kumar@.in" type="text" formControlName="desc">
+                    </mat-form-field>
+ 
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Amount</mat-label>
+                        <input matInput placeholder="Ex. sush.kumar@.in" type="text" formControlName="amount">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Status</mat-label>
+                        <input matInput placeholder="Ex. sush.kumar@.in" type="text" formControlName="status">
+                    </mat-form-field><br>
+                  
+                    <button mat-button matTooltip="Click to login" color="primary" type="submit">Update</button>
+
                 </form>
             </div>
         </div>
@@ -43,7 +44,7 @@
 
             </form>
 
-            <form class="child-dropdown" style="padding-top:8px;">
+            <!-- <form class="child-dropdown" style="padding-top:8px;">
                 <fieldset>
                     <select class="form-select" aria-label="Default select example" [(ngModel)]=" opt2Selected"
                         [ngModelOptions]="{standalone: true}">
@@ -63,7 +64,7 @@
                     <p> Selected value is {{opt3Selected}}</p>
                 </fieldset>
 
-            </form>
+            </form> -->
         </div>
         <div class="button-toggle">
             <mat-button-toggle-group name="ingredients" aria-label="Ingredients">
@@ -98,8 +99,9 @@
                 *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'">
                 <img mat-card-image src="{{obj.src}}" (click)="toogleTag()">
                 <mat-card-content (click)="toogleTag()">
-                    <p>{{obj.desc}}
-                    <h1> {{obj.amount}}</h1><br>
+                    <p>{{obj.desc}}</p>
+                    <h4 style="color: rgb(245, 165, 179);">{{obj.category}}</h4>
+                    <h1> {{obj.amount}}</h1>
                     <p class="status">{{obj.status}}</p>
                     <h4 style="color: #2264d1;">{{obj.kindOf}}</h4>
                 </mat-card-content>

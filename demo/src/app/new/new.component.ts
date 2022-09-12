@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FilterationDataService } from '../filteration-data.service';
-
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -26,11 +26,11 @@ export class NewComponent implements OnInit {
   time: any;
   checkboxArray: any;
   option1: any = [];
-  option2: any = [];
-  option3: any = [];
+  // option2: any = [];
+  // option3: any = [];
   opt1Selected: any;
-  opt2Selected: any;
-  opt3Selected: any;
+  // opt2Selected: any;
+  // opt3Selected: any;
 
   cba: any;
   ngOnInit(): void {
@@ -47,7 +47,8 @@ export class NewComponent implements OnInit {
         "amount": "$128.99",
         "status": "Worldwide shifting available Buyers protection possible",
         "rating": "4.99",
-        "kindOf": "Useless first"
+        "kindOf": "Useless first",
+        "category": "Lay idle"
       },
       {
         "id": 2,
@@ -60,7 +61,8 @@ export class NewComponent implements OnInit {
         "amount": "$128.48",
         "status": "Worldwide shifting available Buyers protection possible",
         "rating": "4.99",
-        "kindOf": "Useless first"
+        "kindOf": "Useless first",
+        "category": "Shabby"
       },
       {
         "id": 3,
@@ -73,7 +75,8 @@ export class NewComponent implements OnInit {
         "amount": "$13.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
-        "kindOf": "Necessary Second"
+        "kindOf": "Necessary Second",
+        "category": "Shabby"
       },
       {
         "id": 4,
@@ -86,7 +89,8 @@ export class NewComponent implements OnInit {
         "amount": "$1.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
-        "kindOf": "Necessary Second"
+        "kindOf": "Necessary Second",
+        "category": "Shabby"
       },
       {
         "id": 5,
@@ -99,7 +103,8 @@ export class NewComponent implements OnInit {
         "amount": "$11.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
-        "kindOf": "Useful Third"
+        "kindOf": "Useful Third",
+        "category": "Shabby"
       },
       {
         "id": 6,
@@ -112,7 +117,8 @@ export class NewComponent implements OnInit {
         "amount": "$13.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
-        "kindOf": "Useful Third"
+        "kindOf": "Useful Third",
+        "category": "Was used"
       },
       {
         "id": 7,
@@ -125,7 +131,8 @@ export class NewComponent implements OnInit {
         "amount": "$49.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
-        "kindOf": "Something Fourth"
+        "kindOf": "Something Fourth",
+        "category": "Was used"
       },
       {
         "id": 8,
@@ -138,7 +145,8 @@ export class NewComponent implements OnInit {
         "amount": "$13.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
-        "kindOf": "Something Fourth"
+        "kindOf": "Something Fourth",
+        "category": "Was used"
       },
       {
         "id": 9,
@@ -151,7 +159,8 @@ export class NewComponent implements OnInit {
         "amount": "$49.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
-        "kindOf": "Useless first"
+        "kindOf": "Useless first",
+        "category": "Shabby"
       },
       {
         "id": 10,
@@ -164,7 +173,8 @@ export class NewComponent implements OnInit {
         "amount": "$12.95",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
-        "kindOf": "Necessary Second"
+        "kindOf": "Necessary Second",
+        "category": "New"
       },
       {
         "id": 11,
@@ -177,7 +187,8 @@ export class NewComponent implements OnInit {
         "amount": "$9.50",
         "status": "Eligible for shipping to mars or somewhere else",
         "rating": "4.05",
-        "kindOf": "Useful Third"
+        "kindOf": "Useful Third",
+        "category": "Lay idle"
       },
       {
         "id": 12,
@@ -190,7 +201,8 @@ export class NewComponent implements OnInit {
         "amount": "$23.25",
         "status": "1258 bids, 359 watches $5.95 for shipping",
         "rating": "4.56",
-        "kindOf": "Something Fourth"
+        "kindOf": "Something Fourth",
+        "category": "New"
       }
     ]
 
@@ -200,23 +212,23 @@ export class NewComponent implements OnInit {
       { id: 3, name: "Useful third" },
       { id: 4, name: "Something fourth" },
     ]
-    this.option2 = [
-      { id: 1, name: "Condition" },
-      { id: 2, name: "New" },
-      { id: 3, name: "Lazy idle" },
-      { id: 4, name: "Was Used" },
-      { id: 5, name: "Shabby" },
-    ]
-    this.option3 = [
-      { id: 1, name: "Delivery options" },
-      { id: 2, name: "Post" },
-      { id: 3, name: "Pickup" },
-      { id: 4, name: "Pigeon" },
-      { id: 5, name: "Space" },
-    ]
+    // this.option2 = [
+    //   { id: 1, name: "Condition" },
+    //   { id: 2, name: "New" },
+    //   { id: 3, name: "Lazy idle" },
+    //   { id: 4, name: "Was Used" },
+    //   { id: 5, name: "Shabby" },
+    // ]
+    // this.option3 = [
+    //   { id: 1, name: "Delivery options" },
+    //   { id: 2, name: "Post" },
+    //   { id: 3, name: "Pickup" },
+    //   { id: 4, name: "Pigeon" },
+    //   { id: 5, name: "Space" },
+    // ]
     // this.opt1Selected = 4;
-    this.opt2Selected = 1;
-    this.opt3Selected = 2;
+    // this.opt2Selected = 1;
+    // this.opt3Selected = 2;
 
   }
 
@@ -249,8 +261,19 @@ export class NewComponent implements OnInit {
 
   /****************form console*****************/
 
-  loginUser(item: any) {
-    console.log(item)
+  // loginUser(item: any) {
+  //   console.log(item)
+  // }
+
+  editDescription = new FormGroup({
+    desc: new FormControl(''),
+    amount: new FormControl(''),
+    status: new FormControl('')
+  })
+
+  edit(item:any){
+    console.log(item.value);
+    
   }
 
   /*****************Add to cart*****************/
@@ -260,7 +283,5 @@ export class NewComponent implements OnInit {
 
   }
 
-  /******************Form*********************/
 
-  hide = true;
 }

@@ -36,6 +36,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FilterPipe } from './filter.pipe';
 import { CollapsableFilterPipe } from './collapsable-filter.pipe';
 import { CartComponent } from './cart/cart.component';
+import { FormComponent } from './form/form.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'new', pathMatch: 'full' },
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
   { path: 'shoes', component: ShoesComponent },
   { path: 'accessories', component: AccessoriesComponent },
   { path: 'more', component: MoreComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent }
 ]
 
 
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     CartComponent,
     FilterPipe,
     CollapsableFilterPipe,
+    FormComponent,
   ],
   entryComponents: [
     BottomSheetComponent
