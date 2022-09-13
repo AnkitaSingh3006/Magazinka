@@ -1,35 +1,5 @@
 <div class="container">
-
-    <!--Toggle tag-->
-    <div *ngIf="showMe" class="dailoguebox">
-        <div class="inner-container">
-            <p class="heading">Update Description</p>
-            <mat-icon class="cancel-icon" (click)="toogleTag()">close</mat-icon>
-            <hr>
-            <div class="second-container">
-                <form class="example-form" name="Update" [formGroup]=" editDescription" (click)="edit(editDescription)">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Description</mat-label>
-                        <input matInput placeholder="Ex. sush.kumar@.in" type="text" formControlName="desc">
-                    </mat-form-field>
- 
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Amount</mat-label>
-                        <input matInput placeholder="Ex. sush.kumar@.in" type="text" formControlName="amount">
-                    </mat-form-field>
-
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Status</mat-label>
-                        <input matInput placeholder="Ex. sush.kumar@.in" type="text" formControlName="status">
-                    </mat-form-field><br>
-                  
-                    <button mat-button matTooltip="Click to login" color="primary" type="submit">Update</button>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
+    
     <mat-card class="outline-card">
         <div class="dropdown">
             <form class="child-dropdown">
@@ -96,9 +66,10 @@
         <div class="cards">
             <!-- | filter:opt2Selected:'filterOption2'  | filter:opt3Selected:'filterOption3' -->
             <mat-card class="example-card"
-                *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'">
-                <img mat-card-image src="{{obj.src}}" (click)="toogleTag()">
-                <mat-card-content (click)="toogleTag()">
+                *ngFor="let obj of model | collapsableFilter: checkboxArray : time | filter:opt1Selected:'filterOption1'"
+                (click)="openDialog(obj.desc,obj.amount,obj.status,obj)">
+                <img mat-card-image src="{{obj.src}}">
+                <mat-card-content >
                     <p>{{obj.desc}}</p>
                     <h4 style="color: rgb(245, 165, 179);">{{obj.category}}</h4>
                     <h1> {{obj.amount}}</h1>
@@ -106,7 +77,7 @@
                     <h4 style="color: #2264d1;">{{obj.kindOf}}</h4>
                 </mat-card-content>
                 <mat-card-actions>
-                    <div class="rating-mat-icon" (click)="toogleTag()">
+                    <div class="rating-mat-icon">
                         <mat-icon>grade</mat-icon>
                         <mat-icon>grade</mat-icon>
                         <mat-icon>grade</mat-icon>
@@ -115,21 +86,7 @@
                     </div>
                     <h5>{{obj.rating}}</h5>
 
-                    <button class="cartButton" (click)="addtoCart(obj)">Add to Cart</button>
-
-                    <!-- <div class="child-class">
-                        <button mat-button class="btn" (click)="toggleSelected()">
-                            <mat-icon *ngIf="selected" aria-label="Example icon-button with a heart icon">
-                                favorite
-                            </mat-icon>
-
-                            <mat-icon aria-label="Example icon-button with a heart icon" *ngIf="!selected">
-                                favorite_border
-                            </mat-icon>
-
-                            <p>WATCH</p>
-                        </button>
-                    </div> -->
+                    <button class="cartButton" (click)="addtoCart(obj,$event)">Add to Cart</button>
 
                 </mat-card-actions>
             </mat-card>

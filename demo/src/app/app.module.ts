@@ -36,7 +36,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FilterPipe } from './filter.pipe';
 import { CollapsableFilterPipe } from './collapsable-filter.pipe';
 import { CartComponent } from './cart/cart.component';
-import { FormComponent } from './form/form.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'new', pathMatch: 'full' },
@@ -64,10 +66,11 @@ const appRoutes: Routes = [
     CartComponent,
     FilterPipe,
     CollapsableFilterPipe,
-    FormComponent,
+    DialogComponent,
   ],
   entryComponents: [
-    BottomSheetComponent
+    BottomSheetComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
@@ -92,6 +95,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatButtonToggleModule,
     MatDatepickerModule,
+    MatDialogModule,
     MatNativeDateModule,
     RouterModule.forRoot(appRoutes),
   ],

@@ -1,0 +1,20 @@
+<h1 mat-dialog-title> Edit Description</h1>
+<div mat-dialog-content>
+   <form [formGroup]="productForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="desc" placeholder="Vintage Typewriter to post awesome stories about UI design and web development"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input matInput formControlName="amount" type="text" placeholder="$50.65">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <textarea matInput formControlName="status" placeholder="Vintage Typewriter to post awesome stories about UI design and web development"></textarea>
+    </mat-form-field>
+   </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addProduct()">Update</button>
+</div>

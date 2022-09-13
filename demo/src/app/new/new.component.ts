@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FilterationDataService } from '../filteration-data.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
+import { HttpStatusCode } from '@angular/common/http';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class NewComponent implements OnInit {
 
 
-  constructor(private message: FilterationDataService, private _cartService: CartService) {
+  constructor(private message: FilterationDataService, private _cartService: CartService, private _dialog: MatDialog) {
     this.message.name.subscribe(cba => {
       this.time = new Date();
 
@@ -31,9 +33,12 @@ export class NewComponent implements OnInit {
   opt1Selected: any;
   // opt2Selected: any;
   // opt3Selected: any;
-
   cba: any;
+
+
+
   ngOnInit(): void {
+
 
     this.model = [
       {
@@ -232,12 +237,6 @@ export class NewComponent implements OnInit {
 
   }
 
-  /*************toogle*************/
-
-  showMe: boolean = false;
-  toogleTag() {
-    this.showMe = !this.showMe
-  }
 
   /********************filter code*******************/
 
@@ -250,14 +249,6 @@ export class NewComponent implements OnInit {
     this.selectedOptionFilter = this.selectedOption.toString();
   }
 
-  /***********favourite to unfavourite button code************/
-
-  // selected: any;
-
-  // toggleSelected() {
-  //   this.selected = !this.selected;
-  // }
-
 
   /****************form console*****************/
 
@@ -265,22 +256,45 @@ export class NewComponent implements OnInit {
   //   console.log(item)
   // }
 
-  editDescription = new FormGroup({
-    desc: new FormControl(''),
-    amount: new FormControl(''),
-    status: new FormControl('')
-  })
-
-  edit(item:any){
-    console.log(item.value);
-    
-  }
 
   /*****************Add to cart*****************/
 
-  addtoCart(obj: any) {
+  addtoCart(obj: any,event:any) {
+    event.stopPropagation();
     this._cartService.addtoCart(obj);
 
+  }
+
+  /*****************Dialog*******************/
+
+  openDialog(desc: any, amount: any, status: any, obj: any) {
+    
+    console.log(amount)
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      desc: desc,
+      amount: amount,
+      status: status,
+    };
+
+    const DialogRef = this._dialog.open(DialogComponent, dialogConfig);
+
+    DialogRef.afterClosed().subscribe(
+      data => { this.result = data 
+      this.updateObject(obj)})
+
+
+  }
+  result: any = { desc: '', amount: '', status: '' }
+  updateObject(obj: any) {
+    obj.desc = this.result.desc
+    obj.amount = this.result.amount
+    obj.status = this.result.status
   }
 
 
