@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FilterationDataService } from '../filteration-data.service';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
-import { HttpStatusCode } from '@angular/common/http';
 
 
 @Component({
@@ -15,12 +14,7 @@ export class NewComponent implements OnInit {
 
 
   constructor(private message: FilterationDataService, private _cartService: CartService, private _dialog: MatDialog) {
-    this.message.name.subscribe(cba => {
-      this.time = new Date();
 
-
-      this.checkboxArray = cba;
-    })
 
   }
 
@@ -36,8 +30,21 @@ export class NewComponent implements OnInit {
   cba: any;
 
 
-
+  public catFilter: any;
   ngOnInit(): void {
+
+    this.message.name.subscribe(cba => {
+      console.log(cba)
+
+      if (cba && cba.length) {
+        let catFilter = cba.filter((item: any) => {
+          return item.checked == true
+        }).map((item: any) => item.id)
+
+        this.catFilter = catFilter;
+        // console.log('collapsableFilter catFilter', catFilter)
+      }
+    })
 
 
     this.model = [
@@ -240,14 +247,14 @@ export class NewComponent implements OnInit {
 
   /********************filter code*******************/
 
-  selectedOption: Array<any> = [];
-  selectedOptionFilter: string = "";
+  // selectedOption: Array<any> = [];
+  // selectedOptionFilter: string = "";
 
-  changeValue() {
+  // changeValue() {
 
-    let option = new Option();
-    this.selectedOptionFilter = this.selectedOption.toString();
-  }
+  //   let option = new Option();
+  //   this.selectedOptionFilter = this.selectedOption.toString();
+  // }
 
 
   /****************form console*****************/
@@ -259,7 +266,7 @@ export class NewComponent implements OnInit {
 
   /*****************Add to cart*****************/
 
-  addtoCart(obj: any,event:any) {
+  addtoCart(obj: any, event: any) {
     event.stopPropagation();
     this._cartService.addtoCart(obj);
 
@@ -268,7 +275,7 @@ export class NewComponent implements OnInit {
   /*****************Dialog*******************/
 
   openDialog(desc: any, amount: any, status: any, obj: any) {
-    
+
     console.log(amount)
 
     const dialogConfig = new MatDialogConfig();
@@ -285,8 +292,10 @@ export class NewComponent implements OnInit {
     const DialogRef = this._dialog.open(DialogComponent, dialogConfig);
 
     DialogRef.afterClosed().subscribe(
-      data => { this.result = data 
-      this.updateObject(obj)})
+      data => {
+        this.result = data
+        this.updateObject(obj)
+      })
 
 
   }
