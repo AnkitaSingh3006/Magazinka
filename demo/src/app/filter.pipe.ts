@@ -38,4 +38,26 @@ export class FilterPipe implements PipeTransform {
     //   return arr;
     // }
 
+
+
+      // if (catogries && filter) {
+    //   const newarr = arr.filter((ele: any) => {
+
+    //     let result = false;
+
+    //     catogries.forEach((cat: any, i: number) => {
+    //       result = result || (ele.checkBoxId == catogries[i])
+    //       console.log(result);
+    //       // console.log("catogries",cat)
+
+    //     })
+
+    //     return result && ele[filterKey] == filter
+    //   })
+
+    //   console.log("colapsable filter new array", newarr);
+
+    //   return newarr;
+    // }
+
 }

@@ -13,38 +13,15 @@ export class CollapsableFilterPipe implements PipeTransform {
     //return array 
 
 
-    if (catogries && filter) {
-      const newarr = arr.filter((ele: any) => {
 
-        let result = false;
+    let newarr = []
 
-        catogries.forEach((cat: any, i: number) => {
-          result = result || (ele.checkBoxId == catogries[i])
-          console.log(result);
-          // console.log("catogries",cat)
-
-        })
-
-        return result && ele[filterKey] == filter
-      })
-
-      console.log("colapsable filter new array", newarr);
-
-      return newarr;
-    }
-
-
-
-    if (filter) {
-
-      return arr.filter((ele: any) => {
-
-        return ele[filterKey] == filter
-      })
+    if (!catogries) {
+      return arr;
     }
 
     if (catogries) {
-      const newarr = arr.filter((ele: any) => {
+      newarr = arr.filter((ele: any) => {
 
         let result = false;
 
@@ -57,17 +34,17 @@ export class CollapsableFilterPipe implements PipeTransform {
         return result
       })
 
-      console.log("colapsable filter new array", newarr);
+    }
+    if (filter) {
 
-      return newarr;
+      return newarr.filter((ele: any) => {
 
+        return ele[filterKey] == filter
+      })
     }
 
-    return arr
-
-
-
-
+    return newarr;
 
   }
+
 }
