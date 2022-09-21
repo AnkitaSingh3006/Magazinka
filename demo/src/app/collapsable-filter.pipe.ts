@@ -14,33 +14,25 @@ export class CollapsableFilterPipe implements PipeTransform {
 
 
 
-    let newarr = []
+    let newarr = arr;
 
-    if (!catogries) {
+    if (!catogries && !arr) {
       return arr;
     }
 
-    if (catogries) {
-      newarr = arr.filter((ele: any) => {
-
-        let result = false;
-
-        catogries.forEach((cat: any, i: number) => {
-          result = result || (ele.checkBoxId == catogries[i])
-          console.log(result);
-
-        })
-
-        return result
-      })
+    if (catogries && catogries.length) {
+      newarr = newarr.filter(x => catogries.includes(x.checkBoxId))
+      console.log('catogries', newarr)
 
     }
     if (filter) {
 
-      return newarr.filter((ele: any) => {
+      newarr = newarr.filter((ele: any) => {
 
         return ele[filterKey] == filter
       })
+      console.log('filter', filter);
+
     }
 
     return newarr;
